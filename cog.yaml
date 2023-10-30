@@ -1,0 +1,17 @@
+build:
+  gpu: true
+  python_version: "3.11"
+  cuda: "12.1"
+  python_packages:
+    - torch==2.1.0
+    - tqdm==4.66.1
+    - omegaconf==2.3.0
+    - einops==0.7.0
+    - transformers==4.34.1
+    - open-clip-torch==2.22.0
+    - xformers==0.0.22.post4
+    # - git+https://github.com/bytedance/MVDream.git # this is indeed adequate :P
+  run:
+    - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.0.1/pget" 
+    - chmod +x /usr/local/bin/pget
+predict: "predict.py:Predictor"
